@@ -13,7 +13,7 @@ export function createGallery(images) {
   const markup = images
     .map(image => {
       return `
-      <div class="photo-card">
+      <li class="photo-card">
         <a href="${image.largeImageURL}">
           <img 
             src="${image.webformatURL}" 
@@ -27,7 +27,7 @@ export function createGallery(images) {
           <p class="info-item"><b>Comments:</b> ${image.comments}</p>
           <p class="info-item"><b>Downloads:</b> ${image.downloads}</p>
         </div>
-      </div>`;
+      </li>`;
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
